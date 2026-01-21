@@ -1,0 +1,68 @@
+// ws-server.js
+const WebSocket = require('ws');
+
+const PORT = 1986;
+const wss = new WebSocket.Server({ port: PORT });
+
+console.log(`WebSocket server running on ws://0.0.0.0:${PORT}`);
+
+// 最大评论数
+const MAX_HISTORY = 100;
+let chatHistory = [];
+
+// 限制评论频率，每个客户端1秒一次
+const RATE_LIMIT_MS = 1000;
+const lastSent = new Map(); // key: client, value: timestamp
+
+// 空闲检查函数
+function cleanUpIfIdle() {
+    if (wss.clients.size === 0) {
+        // 没人连接时清空缓存，减少内存占用
+        chatHistory = [];
+    }
+}
+
+// 只有当有人连接时才启动定时器
+let idleTimer = null;
+wss.on('connection', (ws) => {
+    // 启动空闲清理定时器
+    if (!idleTimer) {
+        idleTimer = setInterval(cleanUpIfIdle, 10000);
+    }
+
+    // 发送当前历史
+    ws.send(JSON.stringify({ type: 'history', data: chatHistory }));
+
+    ws.on('message', (msg) => {
+        const now = Date.now();
+        const text = msg.toString().trim();
+        if (!text) return;
+        // 检查频率限制
+        if (lastSent.has(ws)) {
+            const last = lastSent.get(ws);
+            if (now - last < RATE_LIMIT_MS) return; // 忽略消息
+        }
+        lastSent.set(ws, now);
+
+        // 保存消息到内存
+        const chatMsg = { text: msg.toString(), time: now };
+        chatHistory.push(chatMsg);
+        if (chatHistory.length > MAX_HISTORY) chatHistory.shift();
+
+        // 广播给所有客户端
+        const payload = JSON.stringify({ type: 'message', data: chatMsg });
+        wss.clients.forEach(client => {
+            if (client.readyState === WebSocket.OPEN) client.send(payload);
+        });
+    });
+
+    ws.on('close', () => {
+        lastSent.delete(ws);
+
+        // 如果没有客户端了，清理定时器
+        if (wss.clients.size === 0 && idleTimer) {
+            clearInterval(idleTimer);
+            idleTimer = null;
+        }
+    });
+});
