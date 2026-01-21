@@ -1,0 +1,17 @@
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\bin\Debug\net8.0-windows\DanmakuClient.exe
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\bin\Debug\net8.0-windows\DanmakuClient.deps.json
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\bin\Debug\net8.0-windows\DanmakuClient.runtimeconfig.json
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\bin\Debug\net8.0-windows\DanmakuClient.dll
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\bin\Debug\net8.0-windows\DanmakuClient.pdb
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.Form1.resources
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.csproj.GenerateResource.cache
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.AssemblyInfoInputs.cache
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.AssemblyInfo.cs
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.csproj.CoreCompileInputs.cache
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.dll
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\refint\DanmakuClient.dll
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.pdb
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.genruntimeconfig.cache
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\ref\DanmakuClient.dll
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\obj\Debug\net8.0-windows\DanmakuClient.SettingsForm.resources

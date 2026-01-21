@@ -1,0 +1,2 @@
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\bin\Release\net8.0-windows7.0\win-x64\publish\DanmakuClient.pdb
+C:\Users\xcysy\source\repos\DanmakuClient\DanmakuClient\bin\Release\net8.0-windows7.0\win-x64\publish\DanmakuClient.exe
